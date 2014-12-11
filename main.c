@@ -31,39 +31,36 @@ int		main(int argc, char **argv)
 //	ft_putnbr(snake->y_map);
 	map = map_create(snake->x_map, snake->y_map);
 	map[snake->x_s][snake->y_s] = 's';
-	aff_map(map, snake);
+	
 	while (1)
 	{
+		key = 2;
 		key = getarrowkey();
-		ft_putstr("\nKEY = ");
+		aff_map(map, snake);
+		ft_putnbr(snake->x_s);
+		ft_putchar(' ');
+		ft_putnbr(snake->y_s);
+		ft_putchar('\n');
 		if (key == 1)
 		{
-				map[snake->x_s][snake->y_s] = ' ';
-				snake->x_s -= 1;
-				map[snake->x_s][snake->y_s] = 's';
-				ft_putnbr(snake->x_s);
+			if (go_left(snake, map) == -1)
+				return (-1);
 		}
 		else if (key == 2)
 		{
-				map[snake->x_s][snake->y_s] = ' ';
-				snake->y_s -= 1;
-				map[snake->x_s][snake->y_s] = 's';
-				ft_putnbr(snake->x_s);
+			if (go_up(snake, map) == -1)
+				return (-1);
 		}
 		else if (key == 3)
-			{
-				map[snake->x_s][snake->y_s] = ' ';
-				snake->y_s += 1;
-				map[snake->x_s][snake->y_s] = 's';
-				ft_putnbr(snake->y_s);
-		}
+		{
+			if (go_down(snake, map) == -1)
+				return (-1);
+		}	
 		else if (key == 4)
-			{
-				map[snake->x_s][snake->y_s] = ' ';
-				snake->x_s += 1;
-				map[snake->x_s][snake->y_s] = 's';
-				ft_putnbr(snake->y_s);
-		}
+		{
+			if (go_right(snake, map) == -1)
+				return (-1);
+		}	
 		usleep(100000);
 		system("CLEAR");
 	}

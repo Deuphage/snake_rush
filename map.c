@@ -25,9 +25,10 @@ char	**map_create(int x, int y)
 	while (i < y)
 	{
 		j = 0;
+		map[i] = (char *)malloc(sizeof(char) * x + 1);
 		while (j < x)
 		{
-			map[i] = (char *)malloc(sizeof(char) * x + 2);
+			
 			if ((i == 0 && j == 0) || (i == y - 1 && j == x - 1))
 			{
 				map[i][j] = '#';
@@ -55,13 +56,11 @@ char	**map_create(int x, int y)
 			}
 			j++;
 		}
-		map[i][j] = ('\n');
-		ft_putchar(map[i][j]);
 		j++;
 		map[i][j] = ('\0');
-		ft_putchar(map[i][j]);
+		ft_putchar('\n');
 		i++;
 	}
 	map[i] = '\0';
-	return map;
+	return (map);
 }

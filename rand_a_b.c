@@ -15,6 +15,7 @@
 
 int rand_a_b(int a, int b)
 {
+	srand(time(NULL));
 	if (a > b)
 		return 0;
 	return rand()%(b-a) +a;

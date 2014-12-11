@@ -6,7 +6,7 @@
 /*   By: kescalie <kescalie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/11 10:23:35 by kescalie          #+#    #+#             */
-/*   Updated: 2014/12/11 11:09:09 by kescalie         ###   ########.fr       */
+/*   Updated: 2014/12/11 18:11:05 by kescalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,8 @@ typedef struct	s_game
 char **map_create(int x, int y);
 void	aff_map(char **map, t_game *snake);
 int rand_a_b(int a, int b);
+int go_left(t_game *snake, char **map);
+int go_up(t_game *snake, char **map);
+int go_down(t_game *snake, char **map);
+int go_right(t_game *snake, char **map);
 #endif
