@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <termios.h>
 #include <fcntl.h>
+#include "libft/libft.h"
 
 
 int kbhit(void)
@@ -83,6 +84,12 @@ int		getarrowkey(void)
 			{
 				return (4);
 			}
+			if(c == 27)
+			{
+				return (5);
+			}
+			// else
+			// 	ft_putnbr(c);
 		}
 	}
 	return (0);

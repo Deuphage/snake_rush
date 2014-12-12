@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rand_a_b.c                                         :+:      :+:    :+:   */
+/*   collisions_case.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kescalie <kescalie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/11 11:27:31 by kescalie          #+#    #+#             */
-/*   Updated: 2014/12/11 11:27:32 by kescalie         ###   ########.fr       */
+/*   Created: 2014/12/12 18:19:08 by kescalie          #+#    #+#             */
+/*   Updated: 2014/12/12 18:19:09 by kescalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-
-int rand_a_b(int a, int b)
+int		collisions_case(t_game *snake, t_map *g_map)
 {
-	
-	if (a > b)
-		return 0;
-	return rand()%(b-a) +a;
+
 }

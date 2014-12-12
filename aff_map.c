@@ -14,19 +14,18 @@
 #include "snake.h"
 #include <stdio.h>
 
-void	aff_map(char **map, t_game *snake)
+void	aff_map(t_map *g_map)
 {
 	int y;
 	int x;
 
 	y = 0;
-	while (y < snake->y_map)
+	while (y < g_map->y_map)
 	{
-		
 		x = 0;
-		while (x < snake->x_map + 1)
+		while (x < g_map->x_map) //+1
 		{
-			ft_putchar(map[y][x]);
+			ft_putchar(g_map->map[y][x]);
 			//printf("x=%d, y=%d | %c\n", x, y, map[y][x]);
 			x++;
 		}
