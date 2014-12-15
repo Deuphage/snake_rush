@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_map.c                                          :+:      :+:    :+:   */
+/*   aff_hp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kescalie <kescalie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/11 10:46:02 by kescalie          #+#    #+#             */
-/*   Updated: 2014/12/11 11:09:22 by kescalie         ###   ########.fr       */
+/*   Created: 2014/12/13 15:30:38 by kescalie          #+#    #+#             */
+/*   Updated: 2014/12/13 15:31:00 by kescalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft/libft.h"
 #include "snake.h"
-#include <stdio.h>
+#include "libft/libft.h"
 
-void	aff_map(t_map *g_map)
+void	aff_pv(t_game *snake)
 {
-	int y;
-	int x;
+	int	i = 0;
 
-	y = 0;
-	while (y < g_map->y_map)
+	ft_putstr("PV:  ");
+	while (i < snake->pv_s)
 	{
-		x = 0;
-		while (x < g_map->x_map)
-		{
-			ft_putchar(g_map->map[y][x]);
-			//printf("x=%d, y=%d | %c\n", x, y, map[y][x]);
-			x++;
-		}
-		ft_putchar('\n');
-		y++;
+		ft_putchar('|');
+		i++;
 	}
-
+	ft_putchar('\n');
 }

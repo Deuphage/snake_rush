@@ -30,17 +30,18 @@ int		main(int argc, char **argv)
 	if (g_map->x_max < 3 || g_map->y_max < 3)
 		return (-1);
 	g_map->x_map = rand_a_b(3, g_map->x_max + 1);
-	ft_putnbr(g_map->x_map);
-	ft_putchar('\n');
 	g_map->y_map = rand_a_b(3, g_map->y_max + 1);
-	ft_putnbr(g_map->y_map);
-	ft_putchar('\n');
+	// ft_putnbr(g_map->x_map);
+	// ft_putchar('\n');
+	// ft_putnbr(g_map->y_map);
+	// ft_putchar('\n');
 	snake->x_s = 1;
+	snake->y_s = 1;
 	// ft_putnbr(snake->x_s);
 	// ft_putchar('\n');
-	snake->y_s = 1;
 	// ft_putnbr(snake->y_s);
 	// ft_putchar('\n');
+	snake->pv_s = 13;
 
 	g_map->map = map_create(g_map->x_map, g_map->y_map);
 	ft_putendl("placement du heros");
@@ -53,29 +54,47 @@ int		main(int argc, char **argv)
 		key = 2;
 		key = getarrowkey();
 		aff_map(g_map);
+		aff_pv(snake);
+		ft_putstr("POSITION:");
 		ft_putnbr(snake->x_s);
 		ft_putchar(' ');
 		ft_putnbr(snake->y_s);
 		ft_putchar('\n');
+		ft_putstr("MAP");
+		ft_putnbr(g_map->x_map);
+		ft_putchar(' ');
+		ft_putnbr(g_map->x_map);
 		if (key == 1)
 		{
-			if (go_left(snake, g_map) == -1)
-				return (-1);
+			if (go_left(snake, g_map))
+			{
+				add_room(g_map);
+				g_map = g_map->next;
+			}
 		}
 		else if (key == 2)
 		{
-			if (go_up(snake, g_map) == -1)
-				return (-1);
+			if (go_up(snake, g_map))
+			{
+				add_room(g_map);
+				g_map = g_map->next;
+			}
 		}
 		else if (key == 3)
 		{
-			if (go_down(snake, g_map) == -1)
-				return (-1);
+			if (go_down(snake, g_map))
+			{
+				add_room(g_map);
+				g_map = g_map->next;
+			}
 		}	
 		else if (key == 4)
 		{
-			if (go_right(snake, g_map) == -1)
-				return (-1);
+			if (go_right(snake, g_map))
+			{
+				add_room(g_map);
+				g_map = g_map->next;
+			}
 		}
 		else if (key == 5)
 		{

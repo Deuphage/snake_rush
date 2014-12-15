@@ -84,7 +84,7 @@ int		getarrowkey(void)
 			{
 				return (4);
 			}
-			if(c == 27)
+			if(c == 113)
 			{
 				return (5);
 			}

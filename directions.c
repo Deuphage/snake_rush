@@ -14,56 +14,44 @@
 
 int	go_left(t_game *snake, t_map *g_map)
 {
+	int way = 1;
 	g_map->map[snake->y_s][snake->x_s] = ' ';
 	snake->x_s -= 1;
-	if (snake->x_s == 0)
-	{
-		ft_putstr("GAME OVER");
-		return (-1);
-	}
-	g_map->map[snake->y_s][snake->x_s] = 's';
+	if (collisions_case(snake, g_map, way))
+		return (1);
 	// ft_putnbr(snake->x_s);
 	return (0);
 }
 
 int	go_up(t_game *snake, t_map *g_map)
 {
+	int way = 2;
 	g_map->map[snake->y_s][snake->x_s] = ' ';
 	snake->y_s -= 1;
-	if (snake->y_s == 0)
-	{
-		ft_putstr("GAME OVER");
-		return (-1);
-	}
-	g_map->map[snake->y_s][snake->x_s] = 's';
+	if (collisions_case(snake, g_map, way))
+		return (1);
 	// ft_putnbr(snake->x_s);
 	return (0);
 }
 
 int	go_down(t_game *snake, t_map *g_map)
 {
+	int way = 3;
 	g_map->map[snake->y_s][snake->x_s] = ' ';
 	snake->y_s += 1;
-	if (snake->y_s == g_map->y_map - 1)
-	{
-		ft_putstr("GAME OVER");
-		return (-1);
-	}
-	g_map->map[snake->y_s][snake->x_s] = 's';
+	if (collisions_case(snake, g_map, way))
+		return (1);
 	// ft_putnbr(snake->y_s);
 	return (0);
 }
 
 int	go_right(t_game *snake, t_map *g_map)
 {
+	int way = 4;
 	g_map->map[snake->y_s][snake->x_s] = ' ';
 	snake->x_s += 1;
-	if (snake->x_s == g_map->x_map - 1)
-	{
-		ft_putstr("GAME OVER");
-		return (-1);
-	}
-	g_map->map[snake->y_s][snake->x_s] = 's';
+	if (collisions_case(snake, g_map, way))
+		return (1);
 	// ft_putnbr(snake->y_s);
 	return (0);
 }

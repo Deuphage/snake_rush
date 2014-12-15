@@ -6,7 +6,7 @@
 #    By: kescalie <kescalie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 15:31:50 by kescalie          #+#    #+#              #
-#    Updated: 2014/12/12 17:34:09 by kescalie         ###   ########.fr        #
+#    Updated: 2014/12/15 16:47:09 by kescalie         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -22,9 +22,12 @@ SRC =	main.c \
 		getarrowkey.c \
 		map.c \
 		aff_map.c \
+		aff_hp.c \
 		rand_a_b.c \
 		directions.c \
-		free_all.c
+		collisions_case.c \
+		free_all.c \
+		next_room.c
 
 CC = gcc
 SRC_O = $(SRC:.c=.o)
